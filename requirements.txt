@@ -7,7 +7,7 @@ pandas
 numpy
 
 # AI & GENERATIVE MODELS
-google-generativeai
+google-generativeai==0.3.0
 
 # DOCUMENT & FILE PROCESSING
 PyPDF2

@@ -53,6 +53,14 @@ if 'logged_in' not in st.session_state or not st.session_state['logged_in']:
 
 # --- 2. SPEECH LOGIC (The Threaded Fix) ---
 def speak(text):
+    try:
+        engine = pyttsx3.init()
+        engine.say(text)
+        engine.runAndWait()
+    except Exception as e:
+        # Agar server pe hai toh sirf print karega, app band nahi hogi
+        print("Audio output skipped: Local hardware not found.")
+        st.warning("Voice output is only available when running locally.")
     def _speech_task():
         try:
             new_engine = pyttsx3.init()

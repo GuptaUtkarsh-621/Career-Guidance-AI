@@ -1,6 +1,7 @@
 import streamlit as st
 from utils.processor import extract_text_from_pdf, analyze_resume_with_ai
 import os
+import google.generativeai as genai
 
 # 1. PAGE CONFIGURATION
 st.set_page_config(page_title="Dashboard | Career Guidance AI", layout="wide")

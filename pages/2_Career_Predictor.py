@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 from utils.processor import predict_career
 import os
 import base64

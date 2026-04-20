@@ -1,0 +1,21 @@
+# CORE WEB FRAMEWORK
+streamlit
+
+# MACHINE LEARNING & DATA
+scikit-learn
+pandas
+numpy
+
+# AI & GENERATIVE MODELS
+google-generativeai
+
+# DOCUMENT & FILE PROCESSING
+PyPDF2
+
+# AUDIO & VOICE PROCESSING
+SpeechRecognition
+pyttsx3
+PyAudio
+
+# PLOTTING & VISUALIZATION
+plotly

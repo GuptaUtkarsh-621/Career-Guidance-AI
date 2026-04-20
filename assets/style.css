@@ -1,0 +1,163 @@
+/* 1. CORE THEME UPGRADE - Added Depth and Vibrancy */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap');
+
+html, body, [data-testid="stAppViewContainer"] {
+    font-family: 'Inter', sans-serif;
+    /* Deeper radial gradient with a touch of purple for vibrancy */
+    background: radial-gradient(circle at 10% 10%, #1e1b4b 0%, #0f172a 50%, #020617 100%) !important;
+    color: #f1f5f9 !important;
+}
+
+/* Entrance Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 2. THE "VIVID GLASS" CARD - Increased Saturation and Glow */
+.login-card, .premium-card {
+    background: rgba(30, 41, 59, 0.5) !important; 
+    backdrop-filter: blur(25px) saturate(200%) !important; /* Increased saturation to kill 'dull' look */
+    padding: 35px;
+    border-radius: 24px;
+    position: relative;
+    
+    /* Glowing Border using Indigo and Purple */
+    border: 1px solid rgba(99, 102, 241, 0.4) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 
+                inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+    
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Neon Top-Line Accent */
+.premium-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+    border-radius: 24px 24px 0 0;
+}
+
+/* 3. TYPOGRAPHY - High Contrast */
+h1, h2, h3 {
+    background: linear-gradient(135deg, #ffffff 30%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800 !important;
+    text-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+}
+
+/* Fix for standard paragraph text readability */
+.stMarkdown p {
+    color: #cbd5e1 !important; /* Brighter slate for dark mode */
+    line-height: 1.6;
+}
+
+/* 4. BUTTON GLOW UPGRADE */
+div.stButton > button {
+    background: linear-gradient(90deg, #4f46e5, #9333ea) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4) !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+div.stButton > button:hover {
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.6) !important;
+    transform: scale(1.03) translateY(-3px) !important;
+    filter: brightness(1.2);
+}
+
+/* 5. SIDEBAR ITEM HIGHLIGHT */
+[data-testid="stSidebarNav"] ul li div {
+    border-radius: 12px;
+    margin: 4px 8px;
+    transition: 0.3s;
+}
+
+[data-testid="stSidebarNav"] ul li div:hover {
+    background-color: rgba(99, 102, 241, 0.2) !important;
+    transform: translateX(5px);
+}
+
+/* 6. DASHBOARD METRICS - Sharper White */
+.metric-title { 
+    color: #94a3b8; 
+    font-size: 14px; 
+    font-weight: 600; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.metric-value { 
+    color: #ffffff !important; 
+    font-size: 52px; 
+    font-weight: 800; 
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* 7. NEON PROGRESS BARS - High Intensity */
+.progress-bg { 
+    background-color: #0f172a; 
+    border-radius: 20px; 
+    height: 12px; 
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.progress-fill { 
+    border-radius: 20px; 
+    height: 10px; 
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.8); /* Stronger neon glow */
+}
+
+/* 8. FILE UPLOADER (Cyber-Box) */
+[data-testid="stFileUploader"] {
+    background-color: rgba(15, 23, 42, 0.8);
+    border: 2px dashed #6366f1; /* Changed to Indigo for pop */
+    border-radius: 20px;
+    padding: 20px;
+}
+
+/* 9. SEGMENTED TABS */
+.stTabs [data-baseweb="tab-list"] {
+    background-color: #020617;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: #1e1b4b !important;
+    color: #a5b4fc !important;
+    border: 1px solid rgba(99, 102, 241, 0.3) !important;
+}
+
+/* 10. CLEANUP & WATERMARK */
+#MainMenu, footer, header { visibility: hidden; }
+
+/* --- 11. CLEAN WATERMARK CONTAINER --- */
+.watermark {
+    display: none; /* We are handling this via Python Base64 now for better reliability */
+}
+
+/* Ensure premium card text is bright */
+.premium-card h3 {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.footer-note {
+    position: fixed;
+    bottom: 0; left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: #475569;
+    font-size: 11px;
+    letter-spacing: 1px;
+    background: rgba(2, 6, 23, 0.8);
+}

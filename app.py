@@ -86,7 +86,22 @@ def main():
         st.markdown('</div>', unsafe_allow_html=True)
     
     else:
-        # LOGGED IN VIEW (This is the part that was missing!)
+        # LOGGED IN VIEW - DASHBOARD HEADER
+        st.markdown("""
+            <div style='background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 15px; 
+                        border: 1px solid rgba(129, 140, 248, 0.3); margin-bottom: 25px; text-align: center;
+                        box-shadow: 0 4px 15px rgba(0,0,0,0.3);'>
+                <h1 style='margin: 0; font-size: 2.8rem; background: linear-gradient(90deg, #818CF8, #C084FC);
+                           -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+                           text-shadow: 2px 2px 4px rgba(0,0,0,0.2); font-family: "Segoe UI", Roboto, sans-serif;'>
+                    🚀 Career Guidance AI System
+                </h1>
+                <p style='margin: 10px 0 0 0; color: #818CF8; font-size: 0.9rem; letter-spacing: 4px; font-weight: 600;'>
+                    INTELLIGENT CAREER NAVIGATOR
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
         st.markdown('<div class="premium-card">', unsafe_allow_html=True)
         st.markdown(f"""
             <div style='text-align: center;'>
